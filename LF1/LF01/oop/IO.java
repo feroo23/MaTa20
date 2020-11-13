@@ -127,12 +127,12 @@ public class IO {
 
 	public static double[] readDoubleArray1A() throws IOException {
 		System.out.print("Wie viele Werte? ");
-		double zeilen = readDouble();
+		int zeilen = readInteger();
 		double[] array = readDoubleArray1A(zeilen);
 		return array;
 	}
 
-	public static double[] readDoubleArray1A(double anzWert) {
+	public static double[] readDoubleArray1A(int anzWert) throws IOException {
 		double[] array = new double[anzWert];
 		array = readDoubleArray1A(array);
 		return array;
