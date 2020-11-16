@@ -5,13 +5,13 @@ import java.io.IOException;
 public class Summen {
 
 	public static void main(String[] args) throws IOException {
-		int anzGerade = 0, sumGerade = 0, anzunGerade = 0, sumunGerade = 0;
+		
 
 		System.out.println("Wie viele Zahlen sollen erfassst werden? ");
-		int anz = IO.readInteger();
-		int a[] = IO.readIntegerArray1D(anz);
+		int anzGerade = 0, sumGerade = 0, anzunGerade = 0, sumunGerade = 0;
+		int a[] = IO.readIntegerArray1D();
 		for (int i = 0; i < a.length; i++) {
-			if (a[i]%2 == 0) {
+			if (a[i] % 2 == 0) {
 				anzGerade = anzGerade + 1;
 				sumGerade = sumGerade + a[i];
 			}
