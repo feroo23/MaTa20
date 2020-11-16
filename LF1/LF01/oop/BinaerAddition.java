@@ -4,12 +4,15 @@ import java.io.IOException;
 
 public class BinaerAddition {
 
-	public static void main(String[] args) throws IOException {
+
+
+	public static void main(String[] args) throws IOException {  
 		System.out.println("Wie viele Stellen haben die Binärzahlen maximal? ");
 		int brz = IO.readInteger();
 		System.out.println("Gib die erste Zahl Ziffernweise von rechts ein: ");
-		int[] ziffer1 ,ziffer2 ;
-				
+		int[] ziffer1,ziffer2;
+		int sum1,sum2;
+		
 		for (int i = 0; i <= brz; i++) {
 			ziffer1 = IO.readIntegerArray1D();	
 		}
@@ -18,10 +21,11 @@ public class BinaerAddition {
 			ziffer2 = IO.readIntegerArray1D();
 		}
 		for (int i = 0; i <= brz; i++) {
-			int[] sum = ziffer1[i] + ziffer2[i];
+			ziffer1 / 2 = sum1 ;
 			
+			
+
 		}
 		
 	}
-
 }
