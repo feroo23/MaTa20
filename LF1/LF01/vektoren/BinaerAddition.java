@@ -1,4 +1,4 @@
-package vektroen;
+package vektoren;
 
 import java.io.IOException;
 
@@ -25,7 +25,7 @@ public class BinaerAddition {
 			if(uebertrag){
 				uebertrag = false;
 				if(bin1[i] == 0){
-					bin1[i] = 1;
+					bin1[i] = 1; 
 				}
 				else if(bin2[i] == 0){
 					bin2[i] = 1;

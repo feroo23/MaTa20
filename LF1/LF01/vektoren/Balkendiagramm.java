@@ -1,4 +1,4 @@
-package vektroen;
+package vektoren;
 
 public class Balkendiagramm {
 
