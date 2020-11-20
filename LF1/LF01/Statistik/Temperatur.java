@@ -1,6 +1,8 @@
-package oop;
+package Statistik;
 
 import java.io.IOException;
+
+import oop.IO;
 
 public class Temperatur {
 

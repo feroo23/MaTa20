@@ -1,4 +1,4 @@
-package oop;
+package vektroen;
 
 public class Balkendiagramm {
 

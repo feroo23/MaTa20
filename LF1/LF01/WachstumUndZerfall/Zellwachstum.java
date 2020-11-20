@@ -1,6 +1,8 @@
-package oop;
+package WachstumUndZerfall;
 
 import java.io.IOException;
+
+import oop.IO;
 
 public class Zellwachstum {
 
