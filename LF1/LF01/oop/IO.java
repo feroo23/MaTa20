@@ -140,4 +140,5 @@ public class IO {
 		array = readDoubleArray1A(array);
 		return array;
 	}
+
 }
