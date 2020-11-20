@@ -2,6 +2,8 @@ package vektroen;
 
 import java.io.IOException;
 
+import oop.IO;
+
 public class Verdoppeln {
 
 	public static void main(String[] args) throws IOException {
