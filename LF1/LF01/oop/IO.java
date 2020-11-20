@@ -18,6 +18,7 @@ public class IO {
 		return eingabe;
 
 	}
+	
 	public static int readInteger() throws IOException {
 		while (true) {
 			try {
@@ -33,6 +34,7 @@ public class IO {
 		}
 
 	}
+	
 	/**
 	 * Liest eine Kommazahl von der Konsole ein 
 	 * @return Eine Komma zahl 
