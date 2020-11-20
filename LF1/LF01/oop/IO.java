@@ -101,6 +101,7 @@ public class IO {
 		return array;
 	}
 
+
 	/**
 	 * Liest ein eindiemensionales Array von Ganzzahlen von der Konsole ein.
 	 * @param array Das zu füllendes array
