@@ -6,120 +6,193 @@ import java.io.InputStreamReader;
 
 public class IO {
 
-	/**
-	 * Liest einen Text  von der Konsole
-	 * @return
-	 * @throws IOException
-	 */
+	public static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
+	/**
+	 * Liest einen Text ein
+	 * @return den eingelesenen Text
+	 */
 	public static String readString() throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String eingabe = br.readLine();
-		return eingabe;
-
+		return bufferedReader.readLine();
 	}
-	
-	public static int readInteger() throws IOException {
-		while (true) {
-			try {
-				String eingabe = readString();
-				int zahl = Integer.parseInt(eingabe);
-				return  zahl; 	
-			}
-			catch (NumberFormatException e) {
-				System.out.println("keine Ganzzahl! Bitte erneut versuchen: ");
-
-			}
-
-		}
-
-	}
-	
 	/**
-	 * Liest eine Kommazahl von der Konsole ein 
-	 * @return Eine Komma zahl 
-	 * @throws IOException
+	 * Liest eine Ganze Zahl ein
+	 * @return gibt eine ganze zahl aus
 	 */
-	public static double readDouble() throws IOException {
+	public static int readInteger() {
 		while (true) {
 			try {
-				String eingabe = readString();
-				double zahl = Double.parseDouble(eingabe.trim().replace(',', '.'));
-
-				return zahl;
-			}
-			catch (NumberFormatException e) {
-				System.out.println("keine Ganzzahl! Bitte erneut versuchen: ");
-
+				return Integer.parseInt(bufferedReader.readLine());
+			} catch (NumberFormatException | IOException e) {
+				System.out.println("Bitte geben sie nur Zahlen ein");
 			}
 		}
 	}
-	public static boolean readBoolean() throws IOException {
+	/**
+	 * Liest eine zahl mit nachkommastellen ein
+	 * @return gibt diese aus
+	 */
+	public static Double readDouble() {
 		while (true) {
-			String eingabe = readString();
-			if (eingabe != null ) {	
-				if ((eingabe.equalsIgnoreCase("ja"))
-						|| (eingabe.equalsIgnoreCase("j"))
-						|| (eingabe.equalsIgnoreCase("yes"))
-						|| (eingabe.equalsIgnoreCase("yes"))){
+			try {
+				return Double.parseDouble(bufferedReader.readLine().replace(',','.'));
+			} catch (NumberFormatException | IOException e) {
+				System.out.println("Bitte nur Zahlen ein");
+			}
+		}
+	}
+	/**
+	 * fragt bedingungen ab
+	 * @return gibt true oder false aus
+	 */
+	public static Boolean readBoolean() {
+		while (true) {
+			try {
+				String eingabe = bufferedReader.readLine();
+				if (eingabe.equalsIgnoreCase("ja") || eingabe.equalsIgnoreCase("yes")) {
 					return true;
-				} else if ((eingabe.equalsIgnoreCase("nein"))
-						|| (eingabe.equalsIgnoreCase("n"))
-						|| (eingabe.equalsIgnoreCase("no"))
-						|| (eingabe.equalsIgnoreCase("nö"))){
-					System.out.println("Programm wurde beendet! ");
+
+				} else if (eingabe.equalsIgnoreCase("nein") || eingabe.equalsIgnoreCase("no")){
 					return false;
 				} else {
-					System.out.print("Ungültige Eingabe! Bitte erneut versuchen: ");
+					System.out.println("Geben sie nur ja,yes,,nein,no ein");
 				}
-
+			} catch (Exception e) {
+				System.out.println("Geben sie nur ja,yes,,nein,no ein");
 			}
 		}
 	}
-	/**
-	 * Liest ein eindiemensionales Array von Ganzzahlen von der Konsole ein.
-	 * @param array Das füllende Array.
-	 * @return Ein eindiemensionales Array.
-	 * @throws IOException
-	 */
-	public static int [] readIntegerArray1D(int[]array) throws IOException {
-		for (int i = 0; i < array.length; i++) {
-			System.out.print("Wert eingeben für [" + i +"]: ");
-			array[i] = IO.readInteger();
+
+	public static int[] createIntArray(int arrLength){
+		while(true){
+			try{
+				int[] intArr = new int[arrLength];
+				for(int i = 0; i < intArr.length; i++){
+					System.out.println("Bitte geben Sie die " + i + " Ganzzahl im Array jetzt ein: ");
+					intArr[i] = readInteger();
+				}
+				return intArr;
+			}catch (Exception e){
+				e.printStackTrace();
+			}
 		}
-		return array;
-	}
-	/**
-	 * Liest ein eindiemensionales Array von Ganzzahlen von der Konsole ein.
-	 * @param anzahlWerte Die Anzahl der Array elemente.
-	 * @return ein eindiemensionales Array.
-	 * @throws IOException
-	 */
-	public static int [] readIntegerArray1D(int anzahlWerte) throws IOException {
-		int[] array = new int[anzahlWerte];
-		array = readIntegerArray1D();
-		return array;
 	}
 
+	/**
+	 * Creates an Double Array in the desired length.
+	 * @param arrLength Length of the Array
+	 * @return double[]
+	 */
+	public static double[] createDoubleArray(int arrLength){
+		while(true){
+			try{
+				double[] doubleArr = new double[arrLength];
+				for(int i = 0; i < doubleArr.length; i++){
+					System.out.println("Bitte geben Sie die " + i + " Double Zahl im Array jetzt ein: ");
+					doubleArr[i] = readDouble();
+				}
+				return doubleArr;
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+		}
+	}
 
 	/**
-	 * Liest ein eindiemensionales Array von Ganzzahlen von der Konsole ein.
-	 * @param array Das zu füllendes array
-	 * @return Ein eindiemensionales Array
-	 * @throws IOException
+	 * Creates an String Array in the desired length.
+	 * @param arrLength Length of the Array
+	 * @return String[]
 	 */
-	public static int [] readIntegerArray1D() throws IOException {
-		System.out.print("Wie viele werte? ");
-		int zeilen = IO.readInteger();
+	public static String[] createStringArr(int arrLength){
+		while(true){
+			try{
+				String[] stringArr = new String[arrLength];
+				for(int i = 0; i < stringArr.length; i++){
+					System.out.println("Bitte geben Sie den " + i + "'ten String im Array jetzt ein: ");
+					stringArr[i] = readString();
+				}
+				return stringArr;
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public static int[] readIntegerArray1DBinaer() throws IOException{
+
+		System.out.print("Wie viele Stellen haben die Binärzahlen maximal? = ");
+
+		int zeilen = readInteger();
+		if(zeilen != 1 || zeilen != 0) {
+		}
 		int[] array = readIntegerArray1D(zeilen);
+
+		return array;
+
+	}
+
+	public static int[] readIntegerArray1DBinaer(int anzahlWerte) throws IOException {
+
+		int[] array = new int[anzahlWerte];
+
+		array = readIntegerArray1D(array);
+
+		return array;
+
+	}
+
+	public static int[] readIntegerArray1DBinaer(int[] array) throws IOException {
+
+		for (int i = 0; i < array.length; i++) {
+
+			System.out.println("Gib die Zahl ziffernweise von Rechts ein: ");
+			
+
+			array[i] = readInteger();
+
+
+
+		}
+
 		return array;
 	}
-	/**
-	 * Liest ein eindiemensionales Array von Kommmazahlen von der Konsole ein.
-	 * @param array
-	 * @return
-	 * @throws IOException
-	 */
+	
+	public static int[] readIntegerArray1D() throws IOException{
+
+		System.out.print("Wie viele Werte? ");
+
+		int zeilen = readInteger();
+
+		int[] array = readIntegerArray1D(zeilen);
+
+		return array;
+
+	}
+
+	public static int[] readIntegerArray1D(int anzahlWerte) throws IOException {
+
+		int[] array = new int[anzahlWerte];
+
+		array = readIntegerArray1D(array);
+
+		return array;
+
+	}
+
+	public static int[] readIntegerArray1D(int[] array) throws IOException {
+
+		for (int i = 0; i < array.length; i++) {
+
+			System.out.println("Wert eingeben für [" + i + "]: ");
+
+			array[i] = readInteger();
+
+
+
+		}
+
+		return array;
+	}
 	public static double[] readDoubleArray1A(double[] array) throws IOException {
 		for (int i = 0; i < array.length; i++) {
 			System.out.print("Wert eingeben für [" + i +"]: ");
@@ -140,5 +213,4 @@ public class IO {
 		array = readDoubleArray1A(array);
 		return array;
 	}
-
 }
