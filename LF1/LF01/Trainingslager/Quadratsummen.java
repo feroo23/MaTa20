@@ -1,8 +1,10 @@
-package oop;
+package Trainingslager;
 
 import java.io.IOException;
 
-public class Wurzel {
+import oop.IO;
+
+public class Quadratsummen {
 
 	public static void main(String[] args) throws IOException {
 		System.out.print("Geben sie den Anfangswert ein: ");
@@ -11,14 +13,8 @@ public class Wurzel {
 		int ewert = IO.readInteger();
 		for (int i = awert ; i <= ewert ; i++){ 	
 			System.out.print(i +"= " );
-			System.out.println(Math.sqrt(i));
-		
-			
-		
-			}
-			
-		}
-
-
+			System.out.println(Math.sqrt(i));	
 	}
 
+	}
+}

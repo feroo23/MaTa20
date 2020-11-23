@@ -1,6 +1,8 @@
-package oop;
+package Trainingslager;
 
 import java.io.IOException;
+
+import oop.IO;
 
 public class Quadrat {
 
