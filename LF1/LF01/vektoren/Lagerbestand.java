@@ -28,7 +28,7 @@ public class Lagerbestand {
 		
 		int merken = 0;
 		double prgesamt = 0;
-		
+			
 		for (int i = 0; i < anz; i++) {
 			merken += aznz[i];
 			prgesamt += aznz[i] * preis[i];  
