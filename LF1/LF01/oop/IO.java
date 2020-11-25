@@ -13,8 +13,9 @@ public class IO {
 	 * @return den eingelesenen Text
 	 */
 	public static String readString() throws IOException {
-		return bufferedReader.readLine();
+		return bufferedReader.readLine();	
 	}
+
 	/**
 	 * Liest eine Ganze Zahl ein
 	 * @return gibt eine ganze zahl aus
@@ -28,6 +29,7 @@ public class IO {
 			}
 		}
 	}
+
 	/**
 	 * Liest eine zahl mit nachkommastellen ein
 	 * @return gibt diese aus
@@ -41,6 +43,7 @@ public class IO {
 			}
 		}
 	}
+
 	/**
 	 * fragt bedingungen ab
 	 * @return gibt true oder false aus
@@ -63,7 +66,7 @@ public class IO {
 		}
 	}
 
-	public static int[] createIntArray(int arrLength){
+	public static int[] IntArray(int arrLength){
 		while(true){
 			try{
 				int[] intArr = new int[arrLength];
@@ -83,7 +86,7 @@ public class IO {
 	 * @param arrLength Length of the Array
 	 * @return double[]
 	 */
-	public static double[] createDoubleArray(int arrLength){
+	public static double[] DoubleArray(int arrLength){
 		while(true){
 			try{
 				double[] doubleArr = new double[arrLength];
@@ -103,7 +106,7 @@ public class IO {
 	 * @param arrLength Length of the Array
 	 * @return String[]
 	 */
-	public static String[] createStringArr(int arrLength){
+	public static String[] StringArr(int arrLength){
 		while(true){
 			try{
 				String[] stringArr = new String[arrLength];
@@ -146,7 +149,7 @@ public class IO {
 		for (int i = 0; i < array.length; i++) {
 
 			System.out.println("Gib die Zahl ziffernweise von Rechts ein: ");
-			
+
 
 			array[i] = readInteger();
 
@@ -156,7 +159,7 @@ public class IO {
 
 		return array;
 	}
-	
+
 	public static int[] readIntegerArray1D() throws IOException{
 
 		System.out.print("Wie viele Werte? ");
@@ -187,12 +190,11 @@ public class IO {
 
 			array[i] = readInteger();
 
-
-
 		}
 
 		return array;
 	}
+
 	public static double[] readDoubleArray1A(double[] array) throws IOException {
 		for (int i = 0; i < array.length; i++) {
 			System.out.print("Wert eingeben für [" + i +"]: ");
@@ -213,4 +215,9 @@ public class IO {
 		array = readDoubleArray1A(array);
 		return array;
 	}
+
+
+
 }
+
+
