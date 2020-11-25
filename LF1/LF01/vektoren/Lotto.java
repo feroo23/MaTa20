@@ -49,7 +49,7 @@ public class Lotto {
 			}
 		}
 		return lotto;
-	}
+	} 
 
 	public static void mitzurueck() {
 	        int[] zufallszahl = new int[6];
