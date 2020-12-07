@@ -7,8 +7,9 @@ public class Kino {
 
 	public static void main(String[] args) throws IOException {
 		boolean ok = true;
+		String [][] kino = erzeugeSaal();
 		do {
-			String [][] kino = erzeugeSaal();
+			
 			anzeigeSaal(kino);
 
 			System.out.println(" ");
@@ -29,7 +30,7 @@ public class Kino {
 			else if (text.equalsIgnoreCase("e")) {
 				ok = false;
 			}
-		
+			
 		}while (ok == true );
 		
 	}
@@ -77,11 +78,14 @@ public class Kino {
 		int reihe = IO.readInteger();
 		System.out.println("Welchen Platz wollen sie in der Reihe " + reihe + " reservieren?");
 		int platz = IO.readInteger();
-
+		
+		
+		
 		System.out.println(" ");
 		if (saal[reihe][platz] == "O") {
 			saal[reihe][platz] = "X";
-		}else if (saal[reihe][platz] == "X") {
+		}
+		else if (saal[reihe][platz] == "X") {
 			System.out.println("Der platz ist schon belegt");                                    
 		}
 		anzeigeSaal(saal);

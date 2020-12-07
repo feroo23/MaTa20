@@ -3,62 +3,74 @@ package Matrizen;
 import oop.IO;
 
 public class Lieferungen {
-
+	
 	public static void main(String[] args) {
-		//1
-		erzeugefeld();
-		String[][] feld1 = erzeugefeld();
-		eingabeWert();
-		anzeigefeld(feld1);
+		System.out.print("Wie viele Artikel haben sie angeboten? ");
+		int artikel = IO.readInteger();
+		System.out.print("Wie viele Kunden haben sie, die Produkte gekauft haben? ");
+		int kunden = IO.readInteger();
+		
+		int[][] matrix1 = new int[artikel][kunden];
+		
+		for (int i = 0; i < matrix1.length; i++) {
+			for (int j = 0; j < matrix1[i].length; j++) {
+				System.out.print("Geben sie die Werte für Matrix 1 an der Stelle [" + i + "] [" + j + "] ein: ");
+				matrix1[i][j] = IO.readInteger();
 
-		//2	
-		System.out.println("Martrix ");
-		erzeugefeld();
-		String[][] feld2 = erzeugefeld();
-		anzeigefeld(feld2);
-		eingabeWert();
-	}
-
-	private static String[][] erzeugefeld(){
-		String [][] ar = new String [5][4];
-		ar[0][0] = "\t";
-		for (int j = 1; j < ar[0].length; j++) {
-			ar[0][j] = "Kunde" + j;
-
-		}
-
-		for (int i = 1; i < ar.length; i++) {		
-			ar[i][0] = "artiklel " + i + " ";
-
-		}
-
-		for (int i = 1; i < ar.length; i++) {
-			for (int j = 1; j < ar[i].length; j++) {
-				ar[i][j] = "-";
 			}
+			
 		}
-		return ar;
-
-	}
-	private static void anzeigefeld(String[][] ar){
-		System.out.println("==========================================================================================");
-		System.out.println(" ");
-
-		for (int i = 0; i < ar.length; i++) {
-			for (int j = 0; j < ar[i].length; j++) {
-				System.out.print(ar[i][j] + "\t");
+		
+		for (int i = 0; i < matrix1.length; i++) {
+			for (int j = 0; j < matrix1[i].length; j++) {
+				System.out.print(matrix1[i][j] + "\t");
 			}
 			System.out.println("");
 		}
-	}
-	private static void anzeigsum(){
+		int[][] matrix2 = new int[artikel][kunden];
 		
+		for (int i = 0; i < matrix2.length; i++) {
+			for (int j = 0; j < matrix2[i].length; j++) {
+				System.out.print("Geben sie die Werte für Matrix 2 an der Stelle [" + i + "] [" + j + "] ein: ");
+				matrix2[i][j] = IO.readInteger();
+			}
+		}
+		System.out.println(" ");
+		
+		int[][] matrixsumme = new int[artikel][kunden];
+		
+		for (int i = 0; i < matrix1.length; i++) {
+			for (int j = 0; j < matrix1[i].length; j++) {
+				matrixsumme[i][j] = matrix1[i][j] + matrix2[i][j];
+				
+			}
+			
+		}
+		
+		System.out.println(" ");
+		System.out.println("Matrix 1: ");
+		for (int i = 0; i < matrix1.length; i++) {
+			for (int j = 0; j < matrix1[i].length; j++) {
+				System.out.print(matrix1[i][j] + "\t");
+			}
+			System.out.println("");
+		}
+		System.out.println("Matrix 2: ");
+		for (int i = 0; i < matrix2.length; i++) {
+			for (int j = 0; j < matrix2[i].length; j++) {
+				System.out.print(matrix2[i][j] + "\t");
+			}System.out.println("");
+		}
+		System.out.println("Matrixsumme: ");
+		for (int i = 0; i < matrixsumme.length; i++) {
+			System.out.print("\t Kunde " + i );
+		}
+		for (int i = 0; i < matrixsumme.length; i++) {
+			for (int j = 0; j < matrixsumme[i].length; j++) {
+				System.out.print(matrixsumme[i][j] + "\t\t");
+			}System.out.println("");
+		}		
 
 	}
-	private static void eingabeWert(){
-
-
-	}
-
 }
 
